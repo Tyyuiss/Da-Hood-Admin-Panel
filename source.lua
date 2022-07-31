@@ -1,7 +1,6 @@
 -- Instances:
---Taking this source code means ur gay
 
-local AdminPanel = Instance.new("ScreenGui")
+local DHPanel = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local FindPlayerServerIDTB = Instance.new("TextBox")
 local PlayerNameTB = Instance.new("TextBox")
@@ -12,20 +11,20 @@ local UNBAN = Instance.new("TextButton")
 local UserID = Instance.new("TextBox")
 local UserID2 = Instance.new("TextBox")
 local PlayerList = Instance.new("ScrollingFrame")
-local JailBan = Instance.new("TextButton")
+local Format = Instance.new("TextButton")
 local Spectate = Instance.new("TextButton")
 local UnBan = Instance.new("TextButton")
 local BanUnbanNoteHere = Instance.new("TextBox")
 
 --Properties:
 
-AdminPanel.Name = "AdminPanel"
-AdminPanel.Parent = game.CoreGui
-AdminPanel.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-AdminPanel.ResetOnSpawn = false
+DHPanel.Name = "DHPanel"
+DHPanel.Parent = game.CoreGui
+DHPanel.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+DHPanel.ResetOnSpawn = false
 
 MainFrame.Name = "MainFrame"
-MainFrame.Parent = AdminPanel
+MainFrame.Parent = DHPanel
 MainFrame.BackgroundColor3 = Color3.fromRGB(180, 182, 184)
 MainFrame.BorderSizePixel = 2
 MainFrame.Position = UDim2.new(0.656316757, 0, 0.513655305, 0)
@@ -138,41 +137,41 @@ PlayerList.Name = "PlayerList"
 PlayerList.Parent = MainFrame
 PlayerList.Active = true
 PlayerList.BackgroundColor3 = Color3.fromRGB(180, 182, 184)
-PlayerList.Position = UDim2.new(0, 0, 0.303475976, 0)
-PlayerList.Size = UDim2.new(1.00000024, 0, 0.696524024, 0)
+PlayerList.Position = UDim2.new(0, 0, 0.276000082, 0)
+PlayerList.Size = UDim2.new(1.00000024, 0, 0.723999798, 0)
 PlayerList.CanvasSize = UDim2.new(0, 0, 5, 0)
 PlayerList.ScrollBarThickness = 10
 
-JailBan.Name = "JailBan"
-JailBan.Parent = PlayerList
-JailBan.BackgroundColor3 = Color3.fromRGB(224, 74, 44)
-JailBan.Position = UDim2.new(0, 0, -0.00209336984, 0)
-JailBan.Size = UDim2.new(0.244855598, 0, 0.0199999996, 0)
-JailBan.Font = Enum.Font.SourceSans
-JailBan.Text = "Username"
-JailBan.TextColor3 = Color3.fromRGB(0, 0, 0)
-JailBan.TextScaled = true
-JailBan.TextSize = 14.000
-JailBan.TextWrapped = true
+Format.Name = "Format"
+Format.Parent = PlayerList
+Format.BackgroundColor3 = Color3.fromRGB(224, 74, 44)
+Format.Position = UDim2.new(0, 0, -0.00209336984, 0)
+Format.Size = UDim2.new(0.244855598, 0, 0.0199999996, 0)
+Format.Font = Enum.Font.Ubuntu
+Format.Text = "Username"
+Format.TextColor3 = Color3.fromRGB(0, 0, 0)
+Format.TextScaled = true
+Format.TextSize = 14.000
+Format.TextWrapped = true
 
 Spectate.Name = "Spectate"
-Spectate.Parent = JailBan
+Spectate.Parent = Format
 Spectate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Spectate.Position = UDim2.new(3.03412414, 0, -0.00199983316, 0)
 Spectate.Size = UDim2.new(1.0468061, 0, 1.01000178, 0)
-Spectate.Font = Enum.Font.SourceSans
-Spectate.Text = "Spectate"
+Spectate.Font = Enum.Font.Ubuntu
+Spectate.Text = "RESET"
 Spectate.TextColor3 = Color3.fromRGB(0, 0, 0)
 Spectate.TextScaled = true
 Spectate.TextSize = 14.000
 Spectate.TextWrapped = true
 
 UnBan.Name = "UnBan"
-UnBan.Parent = JailBan
+UnBan.Parent = Format
 UnBan.BackgroundColor3 = Color3.fromRGB(52, 133, 90)
 UnBan.Position = UDim2.new(1, 0, -0.00199969718, 0)
 UnBan.Size = UDim2.new(1.04202127, 0, 1.01000214, 0)
-UnBan.Font = Enum.Font.SourceSans
+UnBan.Font = Enum.Font.Ubuntu
 UnBan.Text = "UnBan"
 UnBan.TextColor3 = Color3.fromRGB(0, 0, 0)
 UnBan.TextScaled = true
@@ -180,11 +179,11 @@ UnBan.TextSize = 14.000
 UnBan.TextWrapped = true
 
 BanUnbanNoteHere.Name = "Ban/Unban Note Here"
-BanUnbanNoteHere.Parent = JailBan
+BanUnbanNoteHere.Parent = Format
 BanUnbanNoteHere.BackgroundColor3 = Color3.fromRGB(180, 182, 184)
 BanUnbanNoteHere.Position = UDim2.new(2.04202199, 0, -0.00199992745, 0)
 BanUnbanNoteHere.Size = UDim2.new(0.993405879, 0, 1.01000166, 0)
-BanUnbanNoteHere.Font = Enum.Font.SourceSans
+BanUnbanNoteHere.Font = Enum.Font.Ubuntu
 BanUnbanNoteHere.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
 BanUnbanNoteHere.PlaceholderText = "Ban/UnBan Note Here"
 BanUnbanNoteHere.Text = ""
@@ -195,46 +194,67 @@ BanUnbanNoteHere.TextWrapped = true
 
 -- Scripts:
 
-local function LVLLMZ_fake_script() -- MainFrame.Handler 
-	local script = Instance.new('LocalScript', MainFrame)
-
-	local UIS = game:GetService("UserInputService")
-	
-	script.Parent.Active = true
-	script.Parent.Draggable = true
-	
-	game.StarterGui:SetCore('SendNotification', {
-	    Title = 'Notification',
-	    Text = 'Thanks for using my DH Panel, updates with more features will be coming out!',
-	    Duration = 10,
-	    Button1 = 'Okay!'
-	})
-	
-	UIS.InputBegan:Connect(function(input, gp)
-	    if not gp then
-	        if input.KeyCode == Enum.KeyCode.T  then
-	            script.Parent.Visible = not script.Parent.Visible
-	        end
-	    end
-	end)
-end
-coroutine.wrap(LVLLMZ_fake_script)()
-local function YEFN_fake_script() -- PlayerList.LocalScript 
+local function TAXITHT_fake_script() -- PlayerList.LocalScript 
 	local script = Instance.new('LocalScript', PlayerList)
 
+	local cam = workspace.CurrentCamera
+	local currentlyspectating = false
+	_G.spectatinguser = ''
+	local plr = game.Players.LocalPlayer
+	
 	function updatepanel(count1)
 	    local count = 0
 	    count = count1
-	
+	    
+	    for i,v in pairs(script.Parent:GetChildren()) do
+	        if v.Name == 'JailBan' then
+	            v:Destroy()
+	        end
+	    end
+	    
 	    for i = 1, #game:GetService("Players"):GetPlayers() do
 	        if count == 0 then
-	            script.Parent.JailBan.Text = game:GetService('Players'):GetPlayers()[i].Name
+	            script.Parent.Format.Text = game:GetService('Players'):GetPlayers()[i].Name
 	            count += 1
 	        else
-	            local clone = script.Parent.JailBan:Clone()
+	            local clone = script.Parent.Format:Clone()
 	            clone.Parent = script.Parent
+	            clone.Name = 'JailBan'
 	            clone.Text = game.Players:GetPlayers()[i].Name
+	            clone.Spectate.Text = 'Spectate'
+	            if clone.Text == _G.spectatinguser then
+	                clone.Spectate.Text = 'UnSpec'
+	                cam.CameraSubject = game.Players:FindFirstChild(clone.Text).Character.Humanoid
+	            else
+	                currentlyspectating = false
+	                _G.spectatinguser = ''
+	            end
 	            clone.Position = UDim2.new(0, 0, 0.022*count, 0)
+	            
+	            clone.Spectate.MouseButton1Click:Connect(function() -- SPECTATE BUTTON
+	                if not currentlyspectating then
+	                    clone.Spectate.Text = 'UnSpec'
+	                    currentlyspectating = true
+	                    _G.spectatinguser = clone.Text
+	                    cam.CameraSubject = game.Players:FindFirstChild(clone.Text).Character.Humanoid
+	                else
+	                    clone.Spectate.Text = 'Spectate'
+	                    currentlyspectating = false
+	                    _G.spectatinguser = ''
+	                    cam.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+	                end
+	            end)            
+	            
+	            clone.MouseButton1Click:Connect(function()
+	                local player = game.Players:GetPlayers()[i].Name
+	                game.Players:FindFirstChild(player).Character.HumanoidRootPart.CFrame = CFrame.new(-294.77435302734375, 21.79796600341797, -109.45382690429688)
+	                game.Players:FindFirstChild(player).Character.HumanoidRootPart.Anchored = true
+	            end)
+	            
+	            clone.UnBan.MouseButton1Click:Connect(function()
+	                local player = game.Players:GetPlayers()[i].Name
+	                game.Players:FindFirstChild(player).Character.HumanoidRootPart.Anchored = false
+	            end)
 	            count += 1
 	        end
 	    end
@@ -251,4 +271,89 @@ local function YEFN_fake_script() -- PlayerList.LocalScript
 	    updatepanel(0)
 	end)
 end
-coroutine.wrap(YEFN_fake_script)()
+coroutine.wrap(TAXITHT_fake_script)()
+local function LVJR_fake_script() -- Format.LocalScript 
+	local script = Instance.new('LocalScript', Format)
+
+	script.Parent.Spectate.MouseButton1Click:Connect(function()
+	    workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+	end)
+end
+coroutine.wrap(LVJR_fake_script)()
+local function HHYA_fake_script() -- MainFrame.Handler 
+	local script = Instance.new('LocalScript', MainFrame)
+
+	local UIS = game:GetService('UserInputService')
+	
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+	
+	local cooldownperma = false
+	local cooldownunbanperma = false
+	local PBANS = {}
+	
+	script.Parent.PERMA.MouseButton1Click:Connect(function()
+	    if not cooldownperma then
+	        if script.Parent.UserID.Text == '' or script.Parent.UserID.Text == ' ' then
+	            cooldownperma = true
+	            script.Parent.PERMA.Text = 'Invalid ID'
+	            task.wait(2.5)
+	            script.Parent.PERMA.Text = 'PERMA'
+	            cooldownperma = false
+	        else
+	            cooldownperma = true
+	            local playername = game.Players:GetNameFromUserIdAsync(tonumber(script.Parent.UserID.Text))
+	            if table.find(PBANS, playername) then
+	                script.Parent.PERMA.Text = playername..' is already banned!'
+	            else
+	                table.insert(PBANS, playername)
+	                script.Parent.PERMA.Text = playername..' has been perma banned!'
+	            end
+	            task.wait(2.5)
+	            script.Parent.PERMA.Text = 'PERMA'
+	            cooldownperma = false
+	        end
+	    end
+	end)
+	
+	script.Parent.UNBAN.MouseButton1Click:Connect(function()
+	    if not cooldownunbanperma then
+	        if script.Parent.UserID2.Text == '' or script.Parent.UserID2.Text == ' ' then
+	            cooldownunbanperma = true
+	            script.Parent.UNBAN.Text = 'Invalid ID'
+	            task.wait(2.5)
+	            cooldownunbanperma = false
+	            script.Parent.UNBAN.Text = 'UNBAN'
+	        else
+	            cooldownunbanperma = true
+	            local playername = game.Players:GetNameFromUserIdAsync(tonumber(script.Parent.UserID2.Text))
+	            if table.find(PBANS, playername) then
+	                local spot = table.find(PBANS, playername)
+	                table.remove(PBANS, spot)
+	                script.Parent.UNBAN.Text = playername..' has been un-banned!'
+	            else
+	                script.Parent.UNBAN.Text = playername..' is not banned!'
+	            end
+	            task.wait(2.5)
+	            script.Parent.UNBAN.Text = 'UNBAN'
+	            cooldownunbanperma = false
+	        end
+	    end
+	end)
+	
+	UIS.InputBegan:Connect(function(input, gameprocess)
+	    if not gameprocess then
+	        if input.KeyCode == Enum.KeyCode.T then
+	            script.Parent.Visible = not script.Parent.Visible
+	        end
+	    end
+	end)
+	
+	game.StarterGui:SetCore('SendNotification', {
+	    Title = 'Notification',
+	    Text = 'You are a Da Hood Moderator! Press "T" to toggle the mod menu!',
+	    Button1 = 'Okay',
+	    Duration = 15
+	})
+end
+coroutine.wrap(HHYA_fake_script)()
