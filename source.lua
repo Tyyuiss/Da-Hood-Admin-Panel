@@ -47,8 +47,8 @@ MainFrame.Size = UDim2.new(0.306824207, 0, 0.437656581, 0)
 PlayerNameTB.Name = "PlayerNameTB"
 PlayerNameTB.Parent = MainFrame
 PlayerNameTB.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-PlayerNameTB.Position = UDim2.new(0.500000298, 0, 0, 0)
-PlayerNameTB.Size = UDim2.new(0.499999672, 0, 0.0894590914, 0)
+PlayerNameTB.Position = UDim2.new(0.50000006, 0, 0, 0)
+PlayerNameTB.Size = UDim2.new(0.49999994, 0, 0.0894590914, 0)
 PlayerNameTB.Font = Enum.Font.SourceSans
 PlayerNameTB.PlaceholderColor3 = Color3.fromRGB(25, 25, 25)
 PlayerNameTB.PlaceholderText = "PlayerName"
@@ -196,7 +196,7 @@ BlankSpace.TextWrapped = true
 FindPlayerServerID.Name = "FindPlayerServerID"
 FindPlayerServerID.Parent = MainFrame
 FindPlayerServerID.BackgroundColor3 = Color3.fromRGB(183, 254, 108)
-FindPlayerServerID.Size = UDim2.new(0.5, 0, 0.0900000036, 0)
+FindPlayerServerID.Size = UDim2.new(0.497999996, 0, 0.0869999975, 0)
 FindPlayerServerID.Font = Enum.Font.SourceSans
 FindPlayerServerID.Text = "Find Player Server ID"
 FindPlayerServerID.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -353,7 +353,7 @@ TextButton_2.TextWrapped = true
 
 -- Scripts:
 
-local function DQJTXSJ_fake_script() -- Format.LocalScript 
+local function QUZG_fake_script() -- Format.LocalScript 
 	local script = Instance.new('LocalScript', Format)
 
 	script.Parent.Spectate.MouseButton1Click:Connect(function()
@@ -361,8 +361,8 @@ local function DQJTXSJ_fake_script() -- Format.LocalScript
 	    _G.spectatinguser = ''
 	end)
 end
-coroutine.wrap(DQJTXSJ_fake_script)()
-local function LYKD_fake_script() -- PlayerList.LocalScript 
+coroutine.wrap(QUZG_fake_script)()
+local function VOIWJX_fake_script() -- PlayerList.LocalScript 
 	local script = Instance.new('LocalScript', PlayerList)
 
 	local cam = workspace.CurrentCamera
@@ -430,8 +430,8 @@ local function LYKD_fake_script() -- PlayerList.LocalScript
 	    updatepanel(0)
 	end)
 end
-coroutine.wrap(LYKD_fake_script)()
-local function OXTLO_fake_script() -- MainFrame.Handler 
+coroutine.wrap(VOIWJX_fake_script)()
+local function LBZV_fake_script() -- MainFrame.Handler 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -590,16 +590,16 @@ local function OXTLO_fake_script() -- MainFrame.Handler
 	    Duration = 15
 	})
 end
-coroutine.wrap(OXTLO_fake_script)()
-local function XLIC_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(LBZV_fake_script)()
+local function GXKHVTW_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 	    script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(XLIC_fake_script)()
-local function BGYTA_fake_script() -- ChangeLog.Handler 
+coroutine.wrap(GXKHVTW_fake_script)()
+local function XWMXB_fake_script() -- ChangeLog.Handler 
 	local script = Instance.new('LocalScript', ChangeLog)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -608,8 +608,8 @@ local function BGYTA_fake_script() -- ChangeLog.Handler
 	    end
 	end)
 end
-coroutine.wrap(BGYTA_fake_script)()
-local function DDCTXIZ_fake_script() -- DHPanel.Commands 
+coroutine.wrap(XWMXB_fake_script)()
+local function FGVR_fake_script() -- DHPanel.Commands 
 	local script = Instance.new('LocalScript', DHPanel)
 
 	local player = game.Players.LocalPlayer
@@ -655,7 +655,7 @@ local function DDCTXIZ_fake_script() -- DHPanel.Commands
 	        local target = game.Players:FindFirstChild(split2[2])
 	        if target then
 	            player.Character.HumanoidRootPart.CFrame = target.Character.HumanoidRootPart.CFrame
-	            notify('Notification', 'You have teleported to '..target..'!', 10)
+	            notify('Notification', 'You have teleported to '..target.Name..'!', 10)
 	        end
 	    elseif split[1] == prefix..'changemoney' then
 	        player.PlayerGui.MainScreenGui.MoneyText.Text = '$'..split[2]
@@ -695,4 +695,4 @@ local function DDCTXIZ_fake_script() -- DHPanel.Commands
 	    end
 	end)
 end
-coroutine.wrap(DDCTXIZ_fake_script)()
+coroutine.wrap(FGVR_fake_script)()
