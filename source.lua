@@ -2,7 +2,6 @@
 
 local DHPanel = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
-local FindPlayerServerIDTB = Instance.new("TextBox")
 local PlayerNameTB = Instance.new("TextBox")
 local JoinServer = Instance.new("TextButton")
 local PERMA = Instance.new("TextButton")
@@ -15,6 +14,7 @@ local Spectate = Instance.new("TextButton")
 local UnBan = Instance.new("TextButton")
 local BanUnbanNoteHere = Instance.new("TextBox")
 local BlankSpace = Instance.new("TextLabel")
+local FindPlayerServerID = Instance.new("TextButton")
 local ChangeLog = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local TextLabel = Instance.new("TextLabel")
@@ -43,19 +43,6 @@ MainFrame.BackgroundColor3 = Color3.fromRGB(180, 182, 184)
 MainFrame.BorderSizePixel = 2
 MainFrame.Position = UDim2.new(0.678740978, 0, 0.458802998, 0)
 MainFrame.Size = UDim2.new(0.306824207, 0, 0.437656581, 0)
-
-FindPlayerServerIDTB.Name = "FindPlayerServerIDTB"
-FindPlayerServerIDTB.Parent = MainFrame
-FindPlayerServerIDTB.BackgroundColor3 = Color3.fromRGB(183, 254, 108)
-FindPlayerServerIDTB.Size = UDim2.new(0.5, 0, 0.0900000036, 0)
-FindPlayerServerIDTB.Font = Enum.Font.SourceSans
-FindPlayerServerIDTB.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-FindPlayerServerIDTB.PlaceholderText = "Find Player Server ID"
-FindPlayerServerIDTB.Text = ""
-FindPlayerServerIDTB.TextColor3 = Color3.fromRGB(0, 0, 0)
-FindPlayerServerIDTB.TextScaled = true
-FindPlayerServerIDTB.TextSize = 14.000
-FindPlayerServerIDTB.TextWrapped = true
 
 PlayerNameTB.Name = "PlayerNameTB"
 PlayerNameTB.Parent = MainFrame
@@ -206,6 +193,17 @@ BlankSpace.TextScaled = true
 BlankSpace.TextSize = 14.000
 BlankSpace.TextWrapped = true
 
+FindPlayerServerID.Name = "FindPlayerServerID"
+FindPlayerServerID.Parent = MainFrame
+FindPlayerServerID.BackgroundColor3 = Color3.fromRGB(183, 254, 108)
+FindPlayerServerID.Size = UDim2.new(0.5, 0, 0.0900000036, 0)
+FindPlayerServerID.Font = Enum.Font.SourceSans
+FindPlayerServerID.Text = "Find Player Server ID"
+FindPlayerServerID.TextColor3 = Color3.fromRGB(0, 0, 0)
+FindPlayerServerID.TextScaled = true
+FindPlayerServerID.TextSize = 14.000
+FindPlayerServerID.TextWrapped = true
+
 ChangeLog.Name = "ChangeLog"
 ChangeLog.Parent = DHPanel
 ChangeLog.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
@@ -355,7 +353,7 @@ TextButton_2.TextWrapped = true
 
 -- Scripts:
 
-local function SFCW_fake_script() -- Format.LocalScript 
+local function DQJTXSJ_fake_script() -- Format.LocalScript 
 	local script = Instance.new('LocalScript', Format)
 
 	script.Parent.Spectate.MouseButton1Click:Connect(function()
@@ -363,8 +361,8 @@ local function SFCW_fake_script() -- Format.LocalScript
 	    _G.spectatinguser = ''
 	end)
 end
-coroutine.wrap(SFCW_fake_script)()
-local function JGPZTJF_fake_script() -- PlayerList.LocalScript 
+coroutine.wrap(DQJTXSJ_fake_script)()
+local function LYKD_fake_script() -- PlayerList.LocalScript 
 	local script = Instance.new('LocalScript', PlayerList)
 
 	local cam = workspace.CurrentCamera
@@ -432,8 +430,8 @@ local function JGPZTJF_fake_script() -- PlayerList.LocalScript
 	    updatepanel(0)
 	end)
 end
-coroutine.wrap(JGPZTJF_fake_script)()
-local function FNYUE_fake_script() -- MainFrame.Handler 
+coroutine.wrap(LYKD_fake_script)()
+local function OXTLO_fake_script() -- MainFrame.Handler 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -592,16 +590,16 @@ local function FNYUE_fake_script() -- MainFrame.Handler
 	    Duration = 15
 	})
 end
-coroutine.wrap(FNYUE_fake_script)()
-local function ATRR_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(OXTLO_fake_script)()
+local function XLIC_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 	    script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(ATRR_fake_script)()
-local function MTIOYZ_fake_script() -- ChangeLog.Handler 
+coroutine.wrap(XLIC_fake_script)()
+local function BGYTA_fake_script() -- ChangeLog.Handler 
 	local script = Instance.new('LocalScript', ChangeLog)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -610,8 +608,8 @@ local function MTIOYZ_fake_script() -- ChangeLog.Handler
 	    end
 	end)
 end
-coroutine.wrap(MTIOYZ_fake_script)()
-local function VTOQAY_fake_script() -- DHPanel.Commands 
+coroutine.wrap(BGYTA_fake_script)()
+local function DDCTXIZ_fake_script() -- DHPanel.Commands 
 	local script = Instance.new('LocalScript', DHPanel)
 
 	local player = game.Players.LocalPlayer
@@ -631,7 +629,7 @@ local function VTOQAY_fake_script() -- DHPanel.Commands
 	    'changemoney <amount>',
 	    'prefix <newprefix>',
 	    'dropcash <amount> - max 10k',
-	    'teleport/tp bank,rev/revolver,db/doublebarrel,adminbase/admin,ufo,food,vbase',
+	    'teleport/tp bank,rev/revolver,db/doublebarrel,adminbase/admin,ufo,food,vbase,jail,police',
 	    'rv/resetview'
 	}
 	
@@ -683,6 +681,10 @@ local function VTOQAY_fake_script() -- DHPanel.Commands
 	            player.Character.HumanoidRootPart.CFrame = CFrame.new(300.04864501953125, 49.280677795410156, -617.6790771484375)
 	        elseif split[2] == 'vbase' or split[2] == 'villainbase' then
 	            player.Character.HumanoidRootPart.CFrame = CFrame.new(-113.29720306396484, -58.702049255371094, 145.22332763671875)
+	        elseif split[2] == 'jail' then
+	            player.Character.HumanoidRootPart.CFrame = CFrame.new(-295.91, 21.8, -94.55)
+	        elseif split[2] == 'police' then
+	            player.Character.HumanoidRootPart.CFrame = CFrame.new(-266.853, 21.8, -111.284)
 	        end
 	    elseif split[1] == prefix..'help' or split[1] == prefix..'cmds' then
 	        notify('Help/CMDS', 'Press F9 to check your chat commands!', 10)
@@ -693,4 +695,4 @@ local function VTOQAY_fake_script() -- DHPanel.Commands
 	    end
 	end)
 end
-coroutine.wrap(VTOQAY_fake_script)()
+coroutine.wrap(DDCTXIZ_fake_script)()
