@@ -353,7 +353,7 @@ TextButton_2.TextWrapped = true
 
 -- Scripts:
 
-local function QUZG_fake_script() -- Format.LocalScript 
+local function LBCCPA_fake_script() -- Format.LocalScript 
 	local script = Instance.new('LocalScript', Format)
 
 	script.Parent.Spectate.MouseButton1Click:Connect(function()
@@ -361,8 +361,8 @@ local function QUZG_fake_script() -- Format.LocalScript
 	    _G.spectatinguser = ''
 	end)
 end
-coroutine.wrap(QUZG_fake_script)()
-local function VOIWJX_fake_script() -- PlayerList.LocalScript 
+coroutine.wrap(LBCCPA_fake_script)()
+local function EJAFF_fake_script() -- PlayerList.LocalScript 
 	local script = Instance.new('LocalScript', PlayerList)
 
 	local cam = workspace.CurrentCamera
@@ -430,8 +430,8 @@ local function VOIWJX_fake_script() -- PlayerList.LocalScript
 	    updatepanel(0)
 	end)
 end
-coroutine.wrap(VOIWJX_fake_script)()
-local function LBZV_fake_script() -- MainFrame.Handler 
+coroutine.wrap(EJAFF_fake_script)()
+local function DYGJJHR_fake_script() -- MainFrame.Handler 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -461,22 +461,24 @@ local function LBZV_fake_script() -- MainFrame.Handler
 	    end
 	end)
 	
-	for i,v in pairs(game:GetService('Players'):GetPlayers()) do
-	    if v.Character and v.Character:FindFirstChild('HumanoidRootPart') then
-	        local BillboardGui = Instance.new('BillboardGui', v.Character.HumanoidRootPart)
-	        BillboardGui.AlwaysOnTop = true
-	        BillboardGui.Size = UDim2.new(0, 200,0, 50)
+	coroutine.resume(coroutine.create(function()
+	    for i,v in pairs(game:GetService('Players'):GetPlayers()) do
+	        if v.Character and v.Character:FindFirstChild('HumanoidRootPart') then
+	            local BillboardGui = Instance.new('BillboardGui', v.Character.HumanoidRootPart)
+	            BillboardGui.AlwaysOnTop = true
+	            BillboardGui.Size = UDim2.new(0, 200,0, 50)
 	
-	        local esp = Instance.new('TextLabel', BillboardGui)
-	        esp.BackgroundTransparency = 1
-	        esp.Size = UDim2.new(0, 200,0, 50)
-	        esp.TextColor3 = Color3.fromRGB(255, 0, 0)
-	        esp.Text = v.Name
-	        if v:WaitForChild('DataFolder'):WaitForChild('Officer').Value == 1 then
-	            esp.TextColor3 = Color3.fromRGB(25, 155, 255)
+	            local esp = Instance.new('TextLabel', BillboardGui)
+	            esp.BackgroundTransparency = 1
+	            esp.Size = UDim2.new(0, 200,0, 50)
+	            esp.TextColor3 = Color3.fromRGB(255, 0, 0)
+	            esp.Text = v.Name
+	            if v:WaitForChild('DataFolder'):WaitForChild('Officer').Value == 1 then
+	                esp.TextColor3 = Color3.fromRGB(25, 155, 255)
+	            end
 	        end
 	    end
-	end
+	end))
 	
 	script.Parent.PERMA.MouseButton1Click:Connect(function()
 	    if not cooldownperma then
@@ -583,6 +585,32 @@ local function LBZV_fake_script() -- MainFrame.Handler
 	    end)
 	end)
 	
+	--[[cript.Parent.FindPlayerServerID.MouseButton1Click:Connect(function()
+	    local URL2 = ("https://games.roblox.com/v1/games/2788229376/servers/Public?sortOrder=Asc&limit=100")
+	    local Http = game:GetService("HttpService"):JSONDecode(game:HttpGet(URL2))
+	    local UserId = game.Players:GetUserIdFromNameAsync(script.Parent.PlayerNameTB.Text)
+	    local GUID
+	
+	    local function tablelength(T)
+	        local count = 0
+	        for _ in pairs(T) do count = count + 1 end
+	        return count
+	    end
+	
+	    for i=1,tonumber(tablelength(Http.data)) do
+	        for j,k in pairs(Http.data[i].playerIds) do
+	            if k == UserId then
+	                GUID = Http.data[i].id
+	            end
+	        end
+	    end
+	    
+	    if GUID ~= nil then
+	        game:GetService('TeleportService'):TeleportToPlaceInstance(2788229376,GUID,game.Players.LocalPlayer)      
+	    end
+	end)
+	]]
+	
 	game.StarterGui:SetCore('SendNotification', {
 	    Title = 'Notification',
 	    Text = 'You are a Da Hood Moderator! Press "T" to toggle the mod menu!',
@@ -590,16 +618,16 @@ local function LBZV_fake_script() -- MainFrame.Handler
 	    Duration = 15
 	})
 end
-coroutine.wrap(LBZV_fake_script)()
-local function GXKHVTW_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(DYGJJHR_fake_script)()
+local function ETDVBDU_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 	    script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(GXKHVTW_fake_script)()
-local function XWMXB_fake_script() -- ChangeLog.Handler 
+coroutine.wrap(ETDVBDU_fake_script)()
+local function ONDGD_fake_script() -- ChangeLog.Handler 
 	local script = Instance.new('LocalScript', ChangeLog)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -608,8 +636,8 @@ local function XWMXB_fake_script() -- ChangeLog.Handler
 	    end
 	end)
 end
-coroutine.wrap(XWMXB_fake_script)()
-local function FGVR_fake_script() -- DHPanel.Commands 
+coroutine.wrap(ONDGD_fake_script)()
+local function JDJSK_fake_script() -- DHPanel.Commands 
 	local script = Instance.new('LocalScript', DHPanel)
 
 	local player = game.Players.LocalPlayer
@@ -688,6 +716,18 @@ local function FGVR_fake_script() -- DHPanel.Commands
 	        end
 	    elseif split[1] == prefix..'help' or split[1] == prefix..'cmds' then
 	        notify('Help/CMDS', 'Press F9 to check your chat commands!', 10)
+	        print([[
+	_________                                           .___      
+	\_   ___ \  ____   _____   _____ _____    ____    __| _/______
+	/    \  \/ /  _ \ /     \ /     \\__  \  /    \  / __ |/  ___/
+	\     \___(  <_> )  Y Y  \  Y Y  \/ __ \|   |  \/ /_/ |\___ \ 
+	 \______  /\____/|__|_|  /__|_|  (____  /___|  /\____ /____  >
+	        \/             \/      \/     \/     \/      \/    \/ 
+	]])
+	
+	        for i = 1, #commands do
+	            print(commands[i])
+	        end
 	    elseif split[1] == prefix..'rv' or split[1] == prefix..'resetview' then
 	        workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 	        _G.spectatinguser = ''
@@ -695,4 +735,4 @@ local function FGVR_fake_script() -- DHPanel.Commands
 	    end
 	end)
 end
-coroutine.wrap(FGVR_fake_script)()
+coroutine.wrap(JDJSK_fake_script)()
