@@ -22,6 +22,11 @@ local TextButton = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 local TextLabel_2 = Instance.new("TextLabel")
 local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel_4 = Instance.new("TextLabel")
+local AreYouSure = Instance.new("Frame")
+local TextLabel_5 = Instance.new("TextLabel")
+local TextButton2 = Instance.new("TextButton")
+local TextButton_2 = Instance.new("TextButton")
 
 --Properties:
 
@@ -152,10 +157,10 @@ Format.TextWrapped = true
 Spectate.Name = "Spectate"
 Spectate.Parent = Format
 Spectate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Spectate.Position = UDim2.new(3.03412414, 0, -0.00199983316, 0)
-Spectate.Size = UDim2.new(1.0468061, 0, 1.01000178, 0)
+Spectate.Position = UDim2.new(3.03412437, 0, -0.00199969718, 0)
+Spectate.Size = UDim2.new(0.957350016, 0, 1.01000178, 0)
 Spectate.Font = Enum.Font.TitilliumWeb
-Spectate.Text = "RESET"
+Spectate.Text = "Spectate"
 Spectate.TextColor3 = Color3.fromRGB(0, 0, 0)
 Spectate.TextScaled = true
 Spectate.TextSize = 14.000
@@ -212,7 +217,7 @@ UICorner.Parent = ChangeLog
 TextLabel.Parent = ChangeLog
 TextLabel.BackgroundColor3 = Color3.fromRGB(97, 97, 97)
 TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.0436135493, 0, 0.0940014645, 0)
+TextLabel.Position = UDim2.new(0.0355620198, 0, 0.180066809, 0)
 TextLabel.Size = UDim2.new(0.888566613, 0, 0.101937599, 0)
 TextLabel.Font = Enum.Font.SourceSans
 TextLabel.Text = "-Added Spectation Functionality"
@@ -238,7 +243,7 @@ UICorner_2.Parent = TextButton
 TextLabel_2.Parent = ChangeLog
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(97, 97, 97)
 TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(0.0436135493, 0, 0.194905668, 0)
+TextLabel_2.Position = UDim2.new(0.0355620198, 0, 0.28097102, 0)
 TextLabel_2.Size = UDim2.new(0.888566613, 0, 0.101937599, 0)
 TextLabel_2.Font = Enum.Font.SourceSans
 TextLabel_2.Text = "-Added Fake Bans | Unbans"
@@ -261,9 +266,68 @@ TextLabel_3.TextSize = 14.000
 TextLabel_3.TextWrapped = true
 TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 
+TextLabel_4.Parent = ChangeLog
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(97, 97, 97)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.Position = UDim2.new(0.0355620198, 0, 0.0761948377, 0)
+TextLabel_4.Size = UDim2.new(0.888566613, 0, 0.101937599, 0)
+TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Text = "-Added Chat Commands | :cmds"
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+
+AreYouSure.Name = "AreYouSure"
+AreYouSure.Parent = DHPanel
+AreYouSure.AnchorPoint = Vector2.new(0.5, 0.5)
+AreYouSure.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AreYouSure.BackgroundTransparency = 1.000
+AreYouSure.BorderSizePixel = 0
+AreYouSure.Position = UDim2.new(0.5, 0, 0.5, 0)
+AreYouSure.Size = UDim2.new(0.121212125, 0, 0.281293958, 0)
+AreYouSure.Visible = false
+
+TextLabel_5.Parent = AreYouSure
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(153, 153, 153)
+TextLabel_5.BorderSizePixel = 0
+TextLabel_5.Size = UDim2.new(1, 0, 0.5, 0)
+TextLabel_5.Font = Enum.Font.SourceSans
+TextLabel_5.Text = "Are You Sure?"
+TextLabel_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.TextScaled = true
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextWrapped = true
+
+TextButton2.Name = "TextButton2"
+TextButton2.Parent = AreYouSure
+TextButton2.BackgroundColor3 = Color3.fromRGB(255, 78, 78)
+TextButton2.BorderSizePixel = 0
+TextButton2.Position = UDim2.new(0, 0, 0.75, 0)
+TextButton2.Size = UDim2.new(1, 0, 0.25, 0)
+TextButton2.Font = Enum.Font.SourceSans
+TextButton2.Text = "NO"
+TextButton2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton2.TextScaled = true
+TextButton2.TextSize = 14.000
+TextButton2.TextWrapped = true
+
+TextButton_2.Parent = AreYouSure
+TextButton_2.BackgroundColor3 = Color3.fromRGB(99, 255, 135)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0, 0, 0.5, 0)
+TextButton_2.Size = UDim2.new(1, 0, 0.25, 0)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "YES"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+
 -- Scripts:
 
-local function APTSHNR_fake_script() -- PlayerList.LocalScript 
+local function XSAZHFV_fake_script() -- PlayerList.LocalScript 
 	local script = Instance.new('LocalScript', PlayerList)
 
 	local cam = workspace.CurrentCamera
@@ -290,9 +354,8 @@ local function APTSHNR_fake_script() -- PlayerList.LocalScript
 	            clone.Parent = script.Parent
 	            clone.Name = 'JailBan'
 	            clone.Text = game.Players:GetPlayers()[i].Name
-	            clone.Spectate.Text = 'Spectate'
 	            if clone.Text == _G.spectatinguser then
-	                clone.Spectate.Text = 'UnSpec'
+	                clone.Spectate.Text = 'Un-Spectate'
 	                cam.CameraSubject = game.Players:FindFirstChild(clone.Text).Character.Humanoid
 	            else
 	                currentlyspectating = false
@@ -302,7 +365,7 @@ local function APTSHNR_fake_script() -- PlayerList.LocalScript
 	            
 	            clone.Spectate.MouseButton1Click:Connect(function() -- SPECTATE BUTTON
 	                if not currentlyspectating then
-	                    clone.Spectate.Text = 'UnSpec'
+	                    clone.Spectate.Text = 'Un-Spectate'
 	                    currentlyspectating = true
 	                    _G.spectatinguser = clone.Text
 	                    cam.CameraSubject = game.Players:FindFirstChild(clone.Text).Character.Humanoid
@@ -340,16 +403,16 @@ local function APTSHNR_fake_script() -- PlayerList.LocalScript
 	    updatepanel(0)
 	end)
 end
-coroutine.wrap(APTSHNR_fake_script)()
-local function XHAZG_fake_script() -- Format.LocalScript 
+coroutine.wrap(XSAZHFV_fake_script)()
+local function VJWA_fake_script() -- Format.LocalScript 
 	local script = Instance.new('LocalScript', Format)
 
 	script.Parent.Spectate.MouseButton1Click:Connect(function()
 	    workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 	end)
 end
-coroutine.wrap(XHAZG_fake_script)()
-local function WUVLA_fake_script() -- MainFrame.Handler 
+coroutine.wrap(VJWA_fake_script)()
+local function EWLDZOY_fake_script() -- MainFrame.Handler 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -425,16 +488,16 @@ local function WUVLA_fake_script() -- MainFrame.Handler
 	    Duration = 15
 	})
 end
-coroutine.wrap(WUVLA_fake_script)()
-local function ALPI_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(EWLDZOY_fake_script)()
+local function VXIQEDD_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 	    script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(ALPI_fake_script)()
-local function TKEAC_fake_script() -- ChangeLog.Handler 
+coroutine.wrap(VXIQEDD_fake_script)()
+local function UDMQT_fake_script() -- ChangeLog.Handler 
 	local script = Instance.new('LocalScript', ChangeLog)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -443,4 +506,72 @@ local function TKEAC_fake_script() -- ChangeLog.Handler
 	    end
 	end)
 end
-coroutine.wrap(TKEAC_fake_script)()
+coroutine.wrap(UDMQT_fake_script)()
+local function XQMUWLR_fake_script() -- DHPanel.Commands 
+	local script = Instance.new('LocalScript', DHPanel)
+
+	local player = game.Players.LocalPlayer
+	
+	function notify(title, message, durration)
+	    game.StarterGui:SetCore('SendNotification', {
+	        Title = title,
+	        Text = message,
+	        Duration = durration,
+	        Button1 = 'Okay'
+	    })
+	end
+	
+	local prefix = ':'
+	local commands = {
+	    'to',
+	    'changemoney',
+	    'prefix',
+	    'dropcash',
+	    'teleport/tp bank,rev,db'
+	}
+	
+	print([[
+	_________                                           .___      
+	\_   ___ \  ____   _____   _____ _____    ____    __| _/______
+	/    \  \/ /  _ \ /     \ /     \\__  \  /    \  / __ |/  ___/
+	\     \___(  <_> )  Y Y  \  Y Y  \/ __ \|   |  \/ /_/ |\___ \ 
+	 \______  /\____/|__|_|  /__|_|  (____  /___|  /\____ /____  >
+	        \/             \/      \/     \/     \/      \/    \/ 
+	]])
+	for i = 1, #commands do
+	    print(commands[i])
+	end
+	
+	player.Chatted:Connect(function(msg)
+	    local split = msg:split(' ')
+	    
+	    if split[1] == prefix..'to' then
+	        local target = game.Players:FindFirstChild(split[2])
+	        if target then
+	            player.Character.HumanoidRootPart.CFrame = target.Character.HumanoidRootPart.CFrame
+	            notify('Notification', 'You have teleported to '..target..'!', 10)
+	        end
+	    elseif split[1] == prefix..'changemoney' then
+	        player.PlayerGui.MainScreenGui.MoneyText.Text = '$'..split[2]
+	        notify('Notificataion', 'Money changed to $'..split[2], 10)
+	    elseif split[1] == prefix..'prefix' then
+	        prefix = split[2]
+	        notify('Prefix Change', 'Prefix changed to: '..split[2])
+	    elseif split[1] == prefix..'dropcash' then
+	        game:GetService("ReplicatedStorage").MainEvent:FireServer("DropMoney", split[2])
+	        notify('Notification', 'You have dropped $'..split[2]..' cash!')
+	    elseif split[1] == prefix..'tp' or split[1] == prefix..'teleport' then
+	        if split[2] == 'bank' then
+	            player.Character.HumanoidRootPart.CFrame = CFrame.new(-450.8910827636719, 23.26938247680664, -282.6551208496094)
+	        elseif split[2] == 'rev' or split[2] == 'revolver'  then
+	            player.Character.HumanoidRootPart.CFrame = CFrame.new(-642.1796264648438, 21.749996185302734, -123.48230743408203)
+	        elseif split[2] == 'db' or split[2] == 'doublebarrel' then
+	            player.Character.HumanoidRootPart.CFrame = CFrame.new(-1018.6782836914062, 21.7499942779541, -271.5892028808594)     
+	        end
+	    elseif split[1] == prefix..'help' or split[1] == prefix..'cmds' then
+	        notify('Help/CMDS', 'Press F9 to check your chat commands!', 10)
+	    --nextcommand
+	    end
+	end)
+end
+coroutine.wrap(XQMUWLR_fake_script)()
