@@ -353,7 +353,7 @@ TextButton_2.TextWrapped = true
 
 -- Scripts:
 
-local function IFBCQ_fake_script() -- Format.LocalScript 
+local function QJUZFU_fake_script() -- Format.LocalScript 
 	local script = Instance.new('LocalScript', Format)
 
 	script.Parent.Spectate.MouseButton1Click:Connect(function()
@@ -361,8 +361,8 @@ local function IFBCQ_fake_script() -- Format.LocalScript
 	    _G.spectatinguser = ''
 	end)
 end
-coroutine.wrap(IFBCQ_fake_script)()
-local function RSNJG_fake_script() -- PlayerList.LocalScript 
+coroutine.wrap(QJUZFU_fake_script)()
+local function LVISQQ_fake_script() -- PlayerList.LocalScript 
 	local script = Instance.new('LocalScript', PlayerList)
 
 	local cam = workspace.CurrentCamera
@@ -430,8 +430,8 @@ local function RSNJG_fake_script() -- PlayerList.LocalScript
 	    updatepanel(0)
 	end)
 end
-coroutine.wrap(RSNJG_fake_script)()
-local function PRLO_fake_script() -- MainFrame.Handler 
+coroutine.wrap(LVISQQ_fake_script)()
+local function YMHM_fake_script() -- MainFrame.Handler 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -618,16 +618,16 @@ local function PRLO_fake_script() -- MainFrame.Handler
 	    Duration = 15
 	})
 end
-coroutine.wrap(PRLO_fake_script)()
-local function IWVH_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(YMHM_fake_script)()
+local function HJYMSVH_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 	    script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(IWVH_fake_script)()
-local function OXND_fake_script() -- ChangeLog.Handler 
+coroutine.wrap(HJYMSVH_fake_script)()
+local function KFFDMS_fake_script() -- ChangeLog.Handler 
 	local script = Instance.new('LocalScript', ChangeLog)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -636,8 +636,8 @@ local function OXND_fake_script() -- ChangeLog.Handler
 	    end
 	end)
 end
-coroutine.wrap(OXND_fake_script)()
-local function QZVXQ_fake_script() -- DHPanel.Commands 
+coroutine.wrap(KFFDMS_fake_script)()
+local function YOEH_fake_script() -- DHPanel.Commands 
 	local script = Instance.new('LocalScript', DHPanel)
 
 	local player = game.Players.LocalPlayer
@@ -658,7 +658,8 @@ local function QZVXQ_fake_script() -- DHPanel.Commands
 	    'prefix <newprefix>',
 	    'dropcash <amount> - max 10k',
 	    'teleport/tp bank,rev/revolver,db/doublebarrel,adminbase/admin,ufo,food,vbase,jail,police',
-	    'rv/resetview'
+	    'rv/resetview',
+	    'money/cash <player> | Tells you the amount of money they have!'
 	}
 	
 	print([[
@@ -731,8 +732,13 @@ local function QZVXQ_fake_script() -- DHPanel.Commands
 	    elseif split[1] == prefix..'rv' or split[1] == prefix..'resetview' then
 	        workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 	        _G.spectatinguser = ''
+	    elseif split[1] == prefix..'money' or split[1] == prefix..'cash' then
+	        local target = game.Players:FindFirstChild(split2[2])
+	        if target then
+	            notify(target.Name..'\'s Cash', '$'..tostring(target.DataFolder.Currency.Value), 10)
+	        end
 	    --nextcommandrvz
 	    end
 	end)
 end
-coroutine.wrap(QZVXQ_fake_script)()
+coroutine.wrap(YOEH_fake_script)()
