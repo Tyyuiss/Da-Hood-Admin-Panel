@@ -327,11 +327,10 @@ TextButton_2.TextWrapped = true
 
 -- Scripts:
 
-local function XSAZHFV_fake_script() -- PlayerList.LocalScript 
+local function KRTDUI_fake_script() -- PlayerList.LocalScript 
 	local script = Instance.new('LocalScript', PlayerList)
 
 	local cam = workspace.CurrentCamera
-	local currentlyspectating = false
 	_G.spectatinguser = ''
 	local plr = game.Players.LocalPlayer
 	
@@ -355,25 +354,18 @@ local function XSAZHFV_fake_script() -- PlayerList.LocalScript
 	            clone.Name = 'JailBan'
 	            clone.Text = game.Players:GetPlayers()[i].Name
 	            if clone.Text == _G.spectatinguser then
-	                clone.Spectate.Text = 'Un-Spectate'
 	                cam.CameraSubject = game.Players:FindFirstChild(clone.Text).Character.Humanoid
-	            else
-	                currentlyspectating = false
 	                _G.spectatinguser = ''
 	            end
 	            clone.Position = UDim2.new(0, 0, 0.022*count, 0)
 	            
 	            clone.Spectate.MouseButton1Click:Connect(function() -- SPECTATE BUTTON
-	                if not currentlyspectating then
-	                    clone.Spectate.Text = 'Un-Spectate'
-	                    currentlyspectating = true
+	                if _G.spectatinguser == '' then
 	                    _G.spectatinguser = clone.Text
 	                    cam.CameraSubject = game.Players:FindFirstChild(clone.Text).Character.Humanoid
 	                else
-	                    clone.Spectate.Text = 'Spectate'
-	                    currentlyspectating = false
 	                    _G.spectatinguser = ''
-	                    cam.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+	                    cam.CameraSubject = game.Players:FindFirstChild(clone.Text).Character.Humanoid
 	                end
 	            end)            
 	            
@@ -403,16 +395,17 @@ local function XSAZHFV_fake_script() -- PlayerList.LocalScript
 	    updatepanel(0)
 	end)
 end
-coroutine.wrap(XSAZHFV_fake_script)()
-local function VJWA_fake_script() -- Format.LocalScript 
+coroutine.wrap(KRTDUI_fake_script)()
+local function OUOG_fake_script() -- Format.LocalScript 
 	local script = Instance.new('LocalScript', Format)
 
 	script.Parent.Spectate.MouseButton1Click:Connect(function()
 	    workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+	    _G.spectatinguser = ''
 	end)
 end
-coroutine.wrap(VJWA_fake_script)()
-local function EWLDZOY_fake_script() -- MainFrame.Handler 
+coroutine.wrap(OUOG_fake_script)()
+local function UOKNEB_fake_script() -- MainFrame.Handler 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -488,16 +481,16 @@ local function EWLDZOY_fake_script() -- MainFrame.Handler
 	    Duration = 15
 	})
 end
-coroutine.wrap(EWLDZOY_fake_script)()
-local function VXIQEDD_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(UOKNEB_fake_script)()
+local function JNPYN_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 	    script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(VXIQEDD_fake_script)()
-local function UDMQT_fake_script() -- ChangeLog.Handler 
+coroutine.wrap(JNPYN_fake_script)()
+local function NPBNLQB_fake_script() -- ChangeLog.Handler 
 	local script = Instance.new('LocalScript', ChangeLog)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -506,8 +499,8 @@ local function UDMQT_fake_script() -- ChangeLog.Handler
 	    end
 	end)
 end
-coroutine.wrap(UDMQT_fake_script)()
-local function XQMUWLR_fake_script() -- DHPanel.Commands 
+coroutine.wrap(NPBNLQB_fake_script)()
+local function WQWPRJU_fake_script() -- DHPanel.Commands 
 	local script = Instance.new('LocalScript', DHPanel)
 
 	local player = game.Players.LocalPlayer
@@ -574,4 +567,4 @@ local function XQMUWLR_fake_script() -- DHPanel.Commands
 	    end
 	end)
 end
-coroutine.wrap(XQMUWLR_fake_script)()
+coroutine.wrap(WQWPRJU_fake_script)()
