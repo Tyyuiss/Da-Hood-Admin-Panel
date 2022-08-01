@@ -23,8 +23,9 @@ local UICorner_2 = Instance.new("UICorner")
 local TextLabel_2 = Instance.new("TextLabel")
 local TextLabel_3 = Instance.new("TextLabel")
 local TextLabel_4 = Instance.new("TextLabel")
-local AreYouSure = Instance.new("Frame")
 local TextLabel_5 = Instance.new("TextLabel")
+local AreYouSure = Instance.new("Frame")
+local TextLabel_6 = Instance.new("TextLabel")
 local TextButton2 = Instance.new("TextButton")
 local TextButton_2 = Instance.new("TextButton")
 
@@ -217,7 +218,7 @@ UICorner.Parent = ChangeLog
 TextLabel.Parent = ChangeLog
 TextLabel.BackgroundColor3 = Color3.fromRGB(97, 97, 97)
 TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.0355620198, 0, 0.180066809, 0)
+TextLabel.Position = UDim2.new(0.0355620198, 0, 0.275035471, 0)
 TextLabel.Size = UDim2.new(0.888566613, 0, 0.101937599, 0)
 TextLabel.Font = Enum.Font.SourceSans
 TextLabel.Text = "-Added Spectation Functionality"
@@ -243,7 +244,7 @@ UICorner_2.Parent = TextButton
 TextLabel_2.Parent = ChangeLog
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(97, 97, 97)
 TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(0.0355620198, 0, 0.28097102, 0)
+TextLabel_2.Position = UDim2.new(0.0355620198, 0, 0.375939697, 0)
 TextLabel_2.Size = UDim2.new(0.888566613, 0, 0.101937599, 0)
 TextLabel_2.Font = Enum.Font.SourceSans
 TextLabel_2.Text = "-Added Fake Bans | Unbans"
@@ -256,7 +257,7 @@ TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel_3.Parent = ChangeLog
 TextLabel_3.BackgroundColor3 = Color3.fromRGB(97, 97, 97)
 TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.Position = UDim2.new(0.0436135493, 0, 0.414520681, 0)
+TextLabel_3.Position = UDim2.new(0.0436135493, 0, 0.479811639, 0)
 TextLabel_3.Size = UDim2.new(0.888566613, 0, 0.101937599, 0)
 TextLabel_3.Font = Enum.Font.SourceSans
 TextLabel_3.Text = "More Coming Soon"
@@ -269,7 +270,7 @@ TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel_4.Parent = ChangeLog
 TextLabel_4.BackgroundColor3 = Color3.fromRGB(97, 97, 97)
 TextLabel_4.BackgroundTransparency = 1.000
-TextLabel_4.Position = UDim2.new(0.0355620198, 0, 0.0761948377, 0)
+TextLabel_4.Position = UDim2.new(0.0355620198, 0, 0.171163499, 0)
 TextLabel_4.Size = UDim2.new(0.888566613, 0, 0.101937599, 0)
 TextLabel_4.Font = Enum.Font.SourceSans
 TextLabel_4.Text = "-Added Chat Commands | :cmds"
@@ -278,6 +279,19 @@ TextLabel_4.TextScaled = true
 TextLabel_4.TextSize = 14.000
 TextLabel_4.TextWrapped = true
 TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_5.Parent = ChangeLog
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(97, 97, 97)
+TextLabel_5.BackgroundTransparency = 1.000
+TextLabel_5.Position = UDim2.new(0.0355620198, 0, 0.067291528, 0)
+TextLabel_5.Size = UDim2.new(0.888566613, 0, 0.101937599, 0)
+TextLabel_5.Font = Enum.Font.SourceSans
+TextLabel_5.Text = "-Added ESP EZ"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextScaled = true
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextWrapped = true
+TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
 
 AreYouSure.Name = "AreYouSure"
 AreYouSure.Parent = DHPanel
@@ -289,16 +303,16 @@ AreYouSure.Position = UDim2.new(0.5, 0, 0.5, 0)
 AreYouSure.Size = UDim2.new(0.121212125, 0, 0.281293958, 0)
 AreYouSure.Visible = false
 
-TextLabel_5.Parent = AreYouSure
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(153, 153, 153)
-TextLabel_5.BorderSizePixel = 0
-TextLabel_5.Size = UDim2.new(1, 0, 0.5, 0)
-TextLabel_5.Font = Enum.Font.SourceSans
-TextLabel_5.Text = "Are You Sure?"
-TextLabel_5.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_5.TextScaled = true
-TextLabel_5.TextSize = 14.000
-TextLabel_5.TextWrapped = true
+TextLabel_6.Parent = AreYouSure
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(153, 153, 153)
+TextLabel_6.BorderSizePixel = 0
+TextLabel_6.Size = UDim2.new(1, 0, 0.5, 0)
+TextLabel_6.Font = Enum.Font.SourceSans
+TextLabel_6.Text = "Are You Sure?"
+TextLabel_6.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_6.TextScaled = true
+TextLabel_6.TextSize = 14.000
+TextLabel_6.TextWrapped = true
 
 TextButton2.Name = "TextButton2"
 TextButton2.Parent = AreYouSure
@@ -327,7 +341,16 @@ TextButton_2.TextWrapped = true
 
 -- Scripts:
 
-local function KRTDUI_fake_script() -- PlayerList.LocalScript 
+local function VIQCOJD_fake_script() -- Format.LocalScript 
+	local script = Instance.new('LocalScript', Format)
+
+	script.Parent.Spectate.MouseButton1Click:Connect(function()
+	    workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+	    _G.spectatinguser = ''
+	end)
+end
+coroutine.wrap(VIQCOJD_fake_script)()
+local function EIKDUQ_fake_script() -- PlayerList.LocalScript 
 	local script = Instance.new('LocalScript', PlayerList)
 
 	local cam = workspace.CurrentCamera
@@ -395,20 +418,12 @@ local function KRTDUI_fake_script() -- PlayerList.LocalScript
 	    updatepanel(0)
 	end)
 end
-coroutine.wrap(KRTDUI_fake_script)()
-local function OUOG_fake_script() -- Format.LocalScript 
-	local script = Instance.new('LocalScript', Format)
-
-	script.Parent.Spectate.MouseButton1Click:Connect(function()
-	    workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-	    _G.spectatinguser = ''
-	end)
-end
-coroutine.wrap(OUOG_fake_script)()
-local function UOKNEB_fake_script() -- MainFrame.Handler 
+coroutine.wrap(EIKDUQ_fake_script)()
+local function KRBW_fake_script() -- MainFrame.Handler 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UIS = game:GetService('UserInputService')
+	local player = game.Players.LocalPlayer
 	
 	script.Parent.Active = true
 	script.Parent.Draggable = true
@@ -416,6 +431,40 @@ local function UOKNEB_fake_script() -- MainFrame.Handler
 	local cooldownperma = false
 	local cooldownunbanperma = false
 	local PBANS = {}
+	
+	player.CharacterAdded:Connect(function(char)
+	    if script.Parent.Visible == true then     
+	        local BillboardGui = Instance.new('BillboardGui', char:WaitForChild('HumanoidRootPart'))
+	        BillboardGui.AlwaysOnTop = true
+	        BillboardGui.Size = UDim2.new(0, 200,0, 50)
+	
+	        local esp = Instance.new('TextLabel', BillboardGui)
+	        esp.BackgroundTransparency = 1
+	        esp.Size = UDim2.new(0, 200,0, 50)
+	        esp.Text = player.Name
+	        esp.TextColor3 = Color3.fromRGB(255, 0, 0)
+	        if player:WaitForChild('DataFolder'):WaitForChild('Officer').Value == 1 then
+	            esp.TextColor3 = Color3.fromRGB(25, 155, 255)
+	        end
+	    end
+	end)
+	
+	for i,v in pairs(game:GetService('Players'):GetPlayers()) do
+	    if v.Character and v.Character:FindFirstChild('HumanoidRootPart') then
+	        local BillboardGui = Instance.new('BillboardGui', v.Character.HumanoidRootPart)
+	        BillboardGui.AlwaysOnTop = true
+	        BillboardGui.Size = UDim2.new(0, 200,0, 50)
+	
+	        local esp = Instance.new('TextLabel', BillboardGui)
+	        esp.BackgroundTransparency = 1
+	        esp.Size = UDim2.new(0, 200,0, 50)
+	        esp.TextColor3 = Color3.fromRGB(255, 0, 0)
+	        esp.Text = v.Name
+	        if v:WaitForChild('DataFolder'):WaitForChild('Officer').Value == 1 then
+	            esp.TextColor3 = Color3.fromRGB(25, 155, 255)
+	        end
+	    end
+	end
 	
 	script.Parent.PERMA.MouseButton1Click:Connect(function()
 	    if not cooldownperma then
@@ -469,9 +518,57 @@ local function UOKNEB_fake_script() -- MainFrame.Handler
 	UIS.InputBegan:Connect(function(input, gameprocess)
 	    if not gameprocess then
 	        if input.KeyCode == Enum.KeyCode.T then
-	            script.Parent.Visible = not script.Parent.Visible
+	            if script.Parent.Visible == true then
+	                script.Parent.Visible = false
+	                for i,v in pairs(game:GetService('Players'):GetPlayers()) do
+	                    if v.Character and v.Character:FindFirstChild('HumanoidRootPart'):FindFirstChild('BillboardGui') then
+	                        for i,v in pairs(v.Character.HumanoidRootPart:GetChildren()) do
+	                            if v.Name == 'BillboardGui' then
+	                                v:Destroy()
+	                            end
+	                        end
+	                    end
+	                end
+	            else
+	                script.Parent.Visible = true
+	                for i,v in pairs(game:GetService('Players'):GetPlayers()) do
+	                    if v.Character and v.Character:FindFirstChild('HumanoidRootPart') then
+	                        local BillboardGui = Instance.new('BillboardGui', v.Character.HumanoidRootPart)
+	                        BillboardGui.AlwaysOnTop = true
+	                        BillboardGui.Size = UDim2.new(0, 200,0, 50)
+	
+	                        local esp = Instance.new('TextLabel', BillboardGui)
+	                        esp.BackgroundTransparency = 1
+	                        esp.Size = UDim2.new(0, 200,0, 50)
+	                        esp.TextColor3 = Color3.fromRGB(255, 0, 0)
+	                        esp.Text = v.Name
+	                        if v:WaitForChild('DataFolder'):WaitForChild('Officer').Value == 1 then
+	                            esp.TextColor3 = Color3.fromRGB(25, 155, 255)
+	                        end
+	                    end
+	                end
+	            end
 	        end
 	    end
+	end)
+	
+	game.Players.PlayerAdded:Connect(function(plr)
+	    plr.CharacterAdded:Connect(function(char)
+	        if script.Parent.Visible == true then     
+	            local BillboardGui = Instance.new('BillboardGui', char:WaitForChild('HumanoidRootPart'))
+	            BillboardGui.AlwaysOnTop = true
+	            BillboardGui.Size = UDim2.new(0, 200,0, 50)
+	
+	            local esp = Instance.new('TextLabel', BillboardGui)
+	            esp.BackgroundTransparency = 1
+	            esp.Size = UDim2.new(0, 200,0, 50)
+	            esp.Text = plr.Name
+	            esp.TextColor3 = Color3.fromRGB(255, 0, 0)
+	            if plr:WaitForChild('DataFolder'):WaitForChild('Officer').Value == 1 then
+	                esp.TextColor3 = Color3.fromRGB(25, 155, 255)
+	            end
+	        end
+	    end)
 	end)
 	
 	game.StarterGui:SetCore('SendNotification', {
@@ -481,16 +578,16 @@ local function UOKNEB_fake_script() -- MainFrame.Handler
 	    Duration = 15
 	})
 end
-coroutine.wrap(UOKNEB_fake_script)()
-local function JNPYN_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(KRBW_fake_script)()
+local function BCQLJW_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 	    script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(JNPYN_fake_script)()
-local function NPBNLQB_fake_script() -- ChangeLog.Handler 
+coroutine.wrap(BCQLJW_fake_script)()
+local function FIES_fake_script() -- ChangeLog.Handler 
 	local script = Instance.new('LocalScript', ChangeLog)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -499,8 +596,8 @@ local function NPBNLQB_fake_script() -- ChangeLog.Handler
 	    end
 	end)
 end
-coroutine.wrap(NPBNLQB_fake_script)()
-local function WQWPRJU_fake_script() -- DHPanel.Commands 
+coroutine.wrap(FIES_fake_script)()
+local function BQFOFAK_fake_script() -- DHPanel.Commands 
 	local script = Instance.new('LocalScript', DHPanel)
 
 	local player = game.Players.LocalPlayer
@@ -567,4 +664,4 @@ local function WQWPRJU_fake_script() -- DHPanel.Commands
 	    end
 	end)
 end
-coroutine.wrap(WQWPRJU_fake_script)()
+coroutine.wrap(BQFOFAK_fake_script)()
