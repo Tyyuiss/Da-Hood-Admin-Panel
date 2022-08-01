@@ -353,7 +353,7 @@ TextButton_2.TextWrapped = true
 
 -- Scripts:
 
-local function LBCCPA_fake_script() -- Format.LocalScript 
+local function IFBCQ_fake_script() -- Format.LocalScript 
 	local script = Instance.new('LocalScript', Format)
 
 	script.Parent.Spectate.MouseButton1Click:Connect(function()
@@ -361,8 +361,8 @@ local function LBCCPA_fake_script() -- Format.LocalScript
 	    _G.spectatinguser = ''
 	end)
 end
-coroutine.wrap(LBCCPA_fake_script)()
-local function EJAFF_fake_script() -- PlayerList.LocalScript 
+coroutine.wrap(IFBCQ_fake_script)()
+local function RSNJG_fake_script() -- PlayerList.LocalScript 
 	local script = Instance.new('LocalScript', PlayerList)
 
 	local cam = workspace.CurrentCamera
@@ -430,8 +430,8 @@ local function EJAFF_fake_script() -- PlayerList.LocalScript
 	    updatepanel(0)
 	end)
 end
-coroutine.wrap(EJAFF_fake_script)()
-local function DYGJJHR_fake_script() -- MainFrame.Handler 
+coroutine.wrap(RSNJG_fake_script)()
+local function PRLO_fake_script() -- MainFrame.Handler 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -535,7 +535,7 @@ local function DYGJJHR_fake_script() -- MainFrame.Handler
 	            if script.Parent.Visible == true then
 	                script.Parent.Visible = false
 	                for i,v in pairs(game:GetService('Players'):GetPlayers()) do
-	                    if v.Character and v.Character:FindFirstChild('HumanoidRootPart'):FindFirstChild('BillboardGui') then
+	                    if v.Character and v.Character:FindFirstChild('HumanoidRootPart') then
 	                        for i,v in pairs(v.Character.HumanoidRootPart:GetChildren()) do
 	                            if v.Name == 'BillboardGui' then
 	                                v:Destroy()
@@ -618,16 +618,16 @@ local function DYGJJHR_fake_script() -- MainFrame.Handler
 	    Duration = 15
 	})
 end
-coroutine.wrap(DYGJJHR_fake_script)()
-local function ETDVBDU_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(PRLO_fake_script)()
+local function IWVH_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 	    script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(ETDVBDU_fake_script)()
-local function ONDGD_fake_script() -- ChangeLog.Handler 
+coroutine.wrap(IWVH_fake_script)()
+local function OXND_fake_script() -- ChangeLog.Handler 
 	local script = Instance.new('LocalScript', ChangeLog)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -636,8 +636,8 @@ local function ONDGD_fake_script() -- ChangeLog.Handler
 	    end
 	end)
 end
-coroutine.wrap(ONDGD_fake_script)()
-local function JDJSK_fake_script() -- DHPanel.Commands 
+coroutine.wrap(OXND_fake_script)()
+local function QZVXQ_fake_script() -- DHPanel.Commands 
 	local script = Instance.new('LocalScript', DHPanel)
 
 	local player = game.Players.LocalPlayer
@@ -735,4 +735,4 @@ local function JDJSK_fake_script() -- DHPanel.Commands
 	    end
 	end)
 end
-coroutine.wrap(JDJSK_fake_script)()
+coroutine.wrap(QZVXQ_fake_script)()
