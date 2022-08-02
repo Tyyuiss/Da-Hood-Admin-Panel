@@ -353,7 +353,7 @@ TextButton_2.TextWrapped = true
 
 -- Scripts:
 
-local function QJUZFU_fake_script() -- Format.LocalScript 
+local function MPFFPNL_fake_script() -- Format.LocalScript 
 	local script = Instance.new('LocalScript', Format)
 
 	script.Parent.Spectate.MouseButton1Click:Connect(function()
@@ -361,8 +361,8 @@ local function QJUZFU_fake_script() -- Format.LocalScript
 	    _G.spectatinguser = ''
 	end)
 end
-coroutine.wrap(QJUZFU_fake_script)()
-local function LVISQQ_fake_script() -- PlayerList.LocalScript 
+coroutine.wrap(MPFFPNL_fake_script)()
+local function KVIIQ_fake_script() -- PlayerList.LocalScript 
 	local script = Instance.new('LocalScript', PlayerList)
 
 	local cam = workspace.CurrentCamera
@@ -430,8 +430,8 @@ local function LVISQQ_fake_script() -- PlayerList.LocalScript
 	    updatepanel(0)
 	end)
 end
-coroutine.wrap(LVISQQ_fake_script)()
-local function YMHM_fake_script() -- MainFrame.Handler 
+coroutine.wrap(KVIIQ_fake_script)()
+local function MKYC_fake_script() -- MainFrame.Handler 
 	local script = Instance.new('LocalScript', MainFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -618,16 +618,16 @@ local function YMHM_fake_script() -- MainFrame.Handler
 	    Duration = 15
 	})
 end
-coroutine.wrap(YMHM_fake_script)()
-local function HJYMSVH_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(MKYC_fake_script)()
+local function JUKDN_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 	    script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(HJYMSVH_fake_script)()
-local function KFFDMS_fake_script() -- ChangeLog.Handler 
+coroutine.wrap(JUKDN_fake_script)()
+local function PFOKVN_fake_script() -- ChangeLog.Handler 
 	local script = Instance.new('LocalScript', ChangeLog)
 
 	game.Players.LocalPlayer.Chatted:Connect(function(msg)
@@ -636,8 +636,8 @@ local function KFFDMS_fake_script() -- ChangeLog.Handler
 	    end
 	end)
 end
-coroutine.wrap(KFFDMS_fake_script)()
-local function YOEH_fake_script() -- DHPanel.Commands 
+coroutine.wrap(PFOKVN_fake_script)()
+local function NNYVC_fake_script() -- DHPanel.Commands 
 	local script = Instance.new('LocalScript', DHPanel)
 
 	local player = game.Players.LocalPlayer
@@ -651,7 +651,25 @@ local function YOEH_fake_script() -- DHPanel.Commands
 	    })
 	end
 	
-	local prefix = ':'
+	_G.settings = {
+	    ['prefix'] = ':'    
+	}
+	
+	local function savesettings()
+	    if (writefile) then
+	        local json = game:GetService('HttpService'):JSONEncode(_G.settings)
+	        writefile('DHAdminPanel.txt', json)
+	    end
+	end
+	
+	local function loadsettings()
+	    if (readfile and isfile and isfile('DHAdminPanel.txt')) then
+	        _G.settings = game:GetService('HttpService'):JSONDecode(readfile('DHAdminPanel.txt'))
+	    end
+	end
+	
+	loadsettings()
+	
 	local commands = {
 	    'to <user>',
 	    'changemoney <amount>',
@@ -680,22 +698,23 @@ local function YOEH_fake_script() -- DHPanel.Commands
 	    local split = message:split(' ')
 	    local split2 = msg:split(' ')
 	    
-	    if split[1] == prefix..'to' then
+	    if split[1] == _G.settings.prefix..'to' then
 	        local target = game.Players:FindFirstChild(split2[2])
 	        if target then
 	            player.Character.HumanoidRootPart.CFrame = target.Character.HumanoidRootPart.CFrame
 	            notify('Notification', 'You have teleported to '..target.Name..'!', 10)
 	        end
-	    elseif split[1] == prefix..'changemoney' then
+	    elseif split[1] == _G.settings.prefix..'changemoney' then
 	        player.PlayerGui.MainScreenGui.MoneyText.Text = '$'..split[2]
 	        notify('Notificataion', 'Money changed to $'..split[2], 10)
-	    elseif split[1] == prefix..'prefix' then
-	        prefix = split[2]
+	    elseif split[1] == _G.settings.prefix..'prefix' then
+	        _G.settings.prefix = split[2]
+	        savesettings()
 	        notify('Prefix Change', 'Prefix changed to: '..split[2])
-	    elseif split[1] == prefix..'dropcash' then
+	    elseif split[1] == _G.settings.prefix..'dropcash' then
 	        game:GetService("ReplicatedStorage").MainEvent:FireServer("DropMoney", split[2])
 	        notify('Notification', 'You have dropped $'..split[2]..' cash!')
-	    elseif split[1] == prefix..'tp' or split[1] == prefix..'teleport' then
+	    elseif split[1] == _G.settings.prefix..'tp' or split[1] == _G.settings.prefix..'teleport' then
 	        if split[2] == 'bank' then
 	            player.Character.HumanoidRootPart.CFrame = CFrame.new(-450.8910827636719, 23.26938247680664, -282.6551208496094)
 	        elseif split[2] == 'rev' or split[2] == 'revolver'  then
@@ -715,7 +734,7 @@ local function YOEH_fake_script() -- DHPanel.Commands
 	        elseif split[2] == 'police' then
 	            player.Character.HumanoidRootPart.CFrame = CFrame.new(-266.853, 21.8, -111.284)
 	        end
-	    elseif split[1] == prefix..'help' or split[1] == prefix..'cmds' then
+	    elseif split[1] == _G.settings.prefix..'help' or split[1] == _G.settings.prefix..'cmds' then
 	        notify('Help/CMDS', 'Press F9 to check your chat commands!', 10)
 	        print([[
 	_________                                           .___      
@@ -729,10 +748,10 @@ local function YOEH_fake_script() -- DHPanel.Commands
 	        for i = 1, #commands do
 	            print(commands[i])
 	        end
-	    elseif split[1] == prefix..'rv' or split[1] == prefix..'resetview' then
+	    elseif split[1] == _G.settings.prefix..'rv' or split[1] == _G.settings.prefix..'resetview' then
 	        workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 	        _G.spectatinguser = ''
-	    elseif split[1] == prefix..'money' or split[1] == prefix..'cash' then
+	    elseif split[1] == _G.settings.prefix..'money' or split[1] == _G.settings.prefix..'cash' then
 	        local target = game.Players:FindFirstChild(split2[2])
 	        if target then
 	            notify(target.Name..'\'s Cash', '$'..tostring(target.DataFolder.Currency.Value), 10)
@@ -741,4 +760,4 @@ local function YOEH_fake_script() -- DHPanel.Commands
 	    end
 	end)
 end
-coroutine.wrap(YOEH_fake_script)()
+coroutine.wrap(NNYVC_fake_script)()
