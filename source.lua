@@ -481,52 +481,56 @@ local function MKYC_fake_script() -- MainFrame.Handler
 	end))
 	
 	script.Parent.PERMA.MouseButton1Click:Connect(function()
-	    if not cooldownperma then
-	        if script.Parent.UserID.Text == '' or script.Parent.UserID.Text == ' ' then
-	            cooldownperma = true
-	            script.Parent.PERMA.Text = 'Invalid ID'
-	            task.wait(2.5)
-	            script.Parent.PERMA.Text = 'PERMA'
-	            cooldownperma = false
-	        else
-	            cooldownperma = true
-	            local playername = game.Players:GetNameFromUserIdAsync(tonumber(script.Parent.UserID.Text))
-	            if table.find(PBANS, playername) then
-	                script.Parent.PERMA.Text = playername..' is already banned!'
-	            else
-	                table.insert(PBANS, playername)
-	                script.Parent.PERMA.Text = playername..' has been perma banned!'
-	            end
-	            task.wait(2.5)
-	            script.Parent.PERMA.Text = 'PERMA'
-	            cooldownperma = false
-	        end
-	    end
+	    pcall(function()
+			if not cooldownperma then
+				if script.Parent.UserID.Text == '' or script.Parent.UserID.Text == ' ' then
+					cooldownperma = true
+					script.Parent.PERMA.Text = 'Invalid ID'
+					task.wait(2.5)
+					script.Parent.PERMA.Text = 'PERMA'
+					cooldownperma = false
+				else
+					cooldownperma = true
+					local playername = game.Players:GetNameFromUserIdAsync(tonumber(script.Parent.UserID.Text))
+					if table.find(PBANS, playername) then
+						script.Parent.PERMA.Text = playername..' is already banned!'
+					else
+						table.insert(PBANS, playername)
+						script.Parent.PERMA.Text = playername..' has been perma banned!'
+					end
+					task.wait(2.5)
+					script.Parent.PERMA.Text = 'PERMA'
+					cooldownperma = false
+				end
+			end
+		end)
 	end)
 	
 	script.Parent.UNBAN.MouseButton1Click:Connect(function()
-	    if not cooldownunbanperma then
-	        if script.Parent.UserID2.Text == '' or script.Parent.UserID2.Text == ' ' then
-	            cooldownunbanperma = true
-	            script.Parent.UNBAN.Text = 'Invalid ID'
-	            task.wait(2.5)
-	            cooldownunbanperma = false
-	            script.Parent.UNBAN.Text = 'UNBAN'
-	        else
-	            cooldownunbanperma = true
-	            local playername = game.Players:GetNameFromUserIdAsync(tonumber(script.Parent.UserID2.Text))
-	            if table.find(PBANS, playername) then
-	                local spot = table.find(PBANS, playername)
-	                table.remove(PBANS, spot)
-	                script.Parent.UNBAN.Text = playername..' has been un-banned!'
-	            else
-	                script.Parent.UNBAN.Text = playername..' is not banned!'
-	            end
-	            task.wait(2.5)
-	            script.Parent.UNBAN.Text = 'UNBAN'
-	            cooldownunbanperma = false
-	        end
-	    end
+	    pcall(function()
+			if not cooldownunbanperma then
+				if script.Parent.UserID2.Text == '' or script.Parent.UserID2.Text == ' ' then
+					cooldownunbanperma = true
+					script.Parent.UNBAN.Text = 'Invalid ID'
+					task.wait(2.5)
+					cooldownunbanperma = false
+					script.Parent.UNBAN.Text = 'UNBAN'
+				else
+					cooldownunbanperma = true
+					local playername = game.Players:GetNameFromUserIdAsync(tonumber(script.Parent.UserID2.Text))
+					if table.find(PBANS, playername) then
+						local spot = table.find(PBANS, playername)
+						table.remove(PBANS, spot)
+						script.Parent.UNBAN.Text = playername..' has been un-banned!'
+					else
+						script.Parent.UNBAN.Text = playername..' is not banned!'
+					end
+					task.wait(2.5)
+					script.Parent.UNBAN.Text = 'UNBAN'
+					cooldownunbanperma = false
+				end
+			end
+		end)
 	end)
 	
 	UIS.InputBegan:Connect(function(input, gameprocess)
