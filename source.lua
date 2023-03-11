@@ -1,3 +1,4 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 -- Instances:
 
 local DHPanel = Instance.new("ScreenGui")
@@ -8,7 +9,7 @@ local PERMA = Instance.new("TextButton")
 local UNBAN = Instance.new("TextButton")
 local UserID = Instance.new("TextBox")
 local UserID2 = Instance.new("TextBox")
-local PlayerList = Instance.new("ScrollingFrame")alocal OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local PlayerList = Instance.new("ScrollingFrame")
 -- Instances:
 
 local DHPanel = Instance.new("ScreenGui")
