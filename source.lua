@@ -1,3 +1,4 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 -- Instances:
 
 local DHPanel = Instance.new("ScreenGui")
@@ -480,8 +481,8 @@ local function MKYC_fake_script() -- MainFrame.Handler
 	    end
 	end))
 	
-	script.Parent.PERMA.MouseButton1Click:Connect(function()
-	    pcall(function()
+	pcall(function()
+		script.Parent.PERMA.MouseButton1Click:Connect(function()
 			if not cooldownperma then
 				if script.Parent.UserID.Text == '' or script.Parent.UserID.Text == ' ' then
 					cooldownperma = true
@@ -490,17 +491,19 @@ local function MKYC_fake_script() -- MainFrame.Handler
 					script.Parent.PERMA.Text = 'PERMA'
 					cooldownperma = false
 				else
-					cooldownperma = true
-					local playername = game.Players:GetNameFromUserIdAsync(tonumber(script.Parent.UserID.Text))
-					if table.find(PBANS, playername) then
-						script.Parent.PERMA.Text = playername..' is already banned!'
-					else
-						table.insert(PBANS, playername)
-						script.Parent.PERMA.Text = playername..' has been perma banned!'
-					end
-					task.wait(2.5)
-					script.Parent.PERMA.Text = 'PERMA'
-					cooldownperma = false
+					pcall(function()
+						cooldownperma = true
+						local playername = game.Players:GetNameFromUserIdAsync(tonumber(script.Parent.UserID.Text))
+						if table.find(PBANS, playername) then
+							script.Parent.PERMA.Text = playername..' is already banned!'
+						else
+							table.insert(PBANS, playername)
+							script.Parent.PERMA.Text = playername..' has been perma banned!'
+						end
+						task.wait(2.5)
+						script.Parent.PERMA.Text = 'PERMA'
+						cooldownperma = false
+					end)
 				end
 			end
 		end)
@@ -615,11 +618,11 @@ local function MKYC_fake_script() -- MainFrame.Handler
 	end)
 	]]
 	
-	game.StarterGui:SetCore('SendNotification', {
-	    Title = 'Notification',
-	    Text = 'You are a Da Hood Moderator! Press "T" to toggle the mod menu!',
-	    Button1 = 'Okay',
-	    Duration = 15
+	OrionLib:MakeNotification({
+		Name = "Da Hood Notification",
+		Content = "You are apart of the Moderation Team, press T to open the moderator panel!",
+		Image = "rbxassetid://4483345998",
+		Time = 5
 	})
 end
 coroutine.wrap(MKYC_fake_script)()
